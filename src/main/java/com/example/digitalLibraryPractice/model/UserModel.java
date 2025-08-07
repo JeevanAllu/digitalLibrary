@@ -1,5 +1,6 @@
 package com.example.digitalLibraryPractice.model;
 
+import com.example.digitalLibraryPractice.enums.UserRole;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
@@ -20,4 +21,6 @@ public class UserModel {
     private Date dateOfBirth;
     private String email;
     private String phoneNumber;
+    private String password;
+    private UserRole role;
 }

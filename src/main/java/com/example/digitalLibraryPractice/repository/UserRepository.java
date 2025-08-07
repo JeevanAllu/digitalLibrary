@@ -55,5 +55,14 @@ public class UserRepository {
         return this.userJPARepository.findAll().stream().map(this.userOutputMapper::mapToModel).toList();
     }
 
+    public UserModel getUserByEmail(String email){
+        return this.userJPARepository.findByEmail(email).map(this.userOutputMapper::mapToModel)
+                .orElseThrow(()->
+                        new ResourceNotFoundException(UserModel.class,"email",email)
+                );
+    }
+
+
+
 
 }

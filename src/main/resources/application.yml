@@ -11,8 +11,12 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-  data:
-    redis:
-      host:
-      port:
-      password:
+#  data:
+#    redis:
+#      host:
+#      port:
+#      password:
+#  security:
+#    user:
+#      name: "Jeevan"
+#      password: "Jeevan"

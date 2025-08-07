@@ -1,6 +1,8 @@
 package com.example.digitalLibraryPractice.entities.input;
 
 
+import com.example.digitalLibraryPractice.enums.UserRole;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Builder;
 import lombok.Data;
@@ -13,10 +15,24 @@ public class UserInputEntity {
 
     @NotBlank
     private long id;
+
+    @NotBlank
     private String firstName;
+
+    @NotBlank
     private String lastName;
+
     private Date dateOfBirth;
+
+    private String password;
+
+    @Email
     private String email;
+
+
     private String phoneNumber;
+
+    //@Builder.Default
+    private UserRole role;
 
 }

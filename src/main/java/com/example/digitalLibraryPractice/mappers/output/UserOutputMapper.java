@@ -8,14 +8,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserOutputMapper {
 
-    public UserModel mapToModel(UserOutputEntity UserOutputEntity){
+    public UserModel mapToModel(UserOutputEntity userOutputEntity){
         return UserModel.builder()
-                .id(UserOutputEntity.getId())
-                .firstName(UserOutputEntity.getFirstName())
-                .lastName(UserOutputEntity.getLastName())
-                .dateOfBirth(UserOutputEntity.getDateOfBirth())
-                .email(UserOutputEntity.getEmail())
-                .phoneNumber(UserOutputEntity.getPhoneNumber())
+                .id(userOutputEntity.getId())
+                .firstName(userOutputEntity.getFirstName())
+                .lastName(userOutputEntity.getLastName())
+                .dateOfBirth(userOutputEntity.getDateOfBirth())
+                .password(userOutputEntity.getPassword())
+                .role(userOutputEntity.getRole())
+                .email(userOutputEntity.getEmail())
+                .phoneNumber(userOutputEntity.getPhoneNumber())
                 .build();
     }
 
@@ -25,6 +27,8 @@ public class UserOutputMapper {
                 .firstName(userModel.getFirstName())
                 .lastName(userModel.getLastName())
                 .dateOfBirth(userModel.getDateOfBirth())
+                .password(userModel.getPassword())
+                .role(userModel.getRole())
                 .email(userModel.getEmail())
                 .phoneNumber(userModel.getPhoneNumber())
                 .build();
