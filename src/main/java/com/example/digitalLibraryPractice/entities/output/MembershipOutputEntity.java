@@ -1,6 +1,7 @@
 package com.example.digitalLibraryPractice.entities.output;
 
 
+import com.example.digitalLibraryPractice.enums.MemberShipPlan;
 import com.example.digitalLibraryPractice.enums.MembershipStatus;
 import jakarta.persistence.*;
 import jdk.jshell.Snippet;
@@ -18,8 +19,8 @@ import java.time.Instant;
 public class MembershipOutputEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(nullable = false)
-    private Long id;
+    @Column(name = "id",nullable = false)
+    private long id;
 
     @ManyToOne
     @JoinColumn(name = "user_id",nullable = false)
@@ -31,9 +32,13 @@ public class MembershipOutputEntity {
     @Column(name = "end_date",nullable = false)
     private Instant endDate;
 
+    @Column(name = "status",nullable = false)
     @Enumerated(EnumType.STRING)
     private MembershipStatus status;
 
+    @Column(name = "plan",nullable = false)
+    @Enumerated(EnumType.STRING)
+    private MemberShipPlan plan;
 
 }
 

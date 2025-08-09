@@ -2,17 +2,19 @@ package com.example.digitalLibraryPractice.adapter;
 
 import com.example.digitalLibraryPractice.commons.CommonAdapter;
 import com.example.digitalLibraryPractice.entities.input.MembershipInputEntity;
+import com.example.digitalLibraryPractice.enums.MembershipStatus;
 import com.example.digitalLibraryPractice.mappers.input.BookInputMapper;
 import com.example.digitalLibraryPractice.mappers.input.MembershipInputMapper;
 import com.example.digitalLibraryPractice.model.MembershipModel;
 import com.example.digitalLibraryPractice.services.MembershipService;
+import com.example.digitalLibraryPractice.utils.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-public class MembershipAdapter implements CommonAdapter<MembershipInputEntity,MembershipModel>{
+public class MembershipAdapter implements CommonAdapter<MembershipInputEntity,MembershipModel> {
 
     private final MembershipService membershipService;
     private final MembershipInputMapper membershipInputMapper;
@@ -25,12 +27,16 @@ public class MembershipAdapter implements CommonAdapter<MembershipInputEntity,Me
 
     @Override
     public MembershipModel save(MembershipInputEntity inputEntity) {
-        return this.membershipService.save(this.membershipInputMapper.mapToModel(inputEntity));
+        return this.membershipService.addMemberShip(this.membershipInputMapper.mapToModel(inputEntity));
+    }
+
+    public MembershipModel changeStatus(long membershipId,MembershipStatus status){
+        return this.membershipService.updateMemberShipStatus(membershipId, status);
     }
 
     @Override
     public MembershipModel update(MembershipInputEntity inputEntity) {
-        return null;
+        return Todo.todo();
     }
 
     @Override
@@ -38,13 +44,22 @@ public class MembershipAdapter implements CommonAdapter<MembershipInputEntity,Me
         return this.membershipService.getById(id);
     }
 
+    public void deleteMemberByUserId(long id){
+        this.membershipService.deleteMemberByUserId(id);
+    }
+
     @Override
     public void deleteById(long id) {
-
+        Todo.todo();
     }
+
 
     @Override
     public List<MembershipModel> getAll() {
-        return List.of();
+        return Todo.todo();
     }
+
+
+
 }
+

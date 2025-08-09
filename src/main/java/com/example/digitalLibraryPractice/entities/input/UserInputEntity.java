@@ -14,9 +14,6 @@ import java.util.Date;
 public class UserInputEntity {
 
     @NotBlank
-    private long id;
-
-    @NotBlank
     private String firstName;
 
     @NotBlank
@@ -29,10 +26,8 @@ public class UserInputEntity {
     @Email
     private String email;
 
-
     private String phoneNumber;
 
-    //@Builder.Default
     private UserRole role;
 
 }

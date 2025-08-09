@@ -10,7 +10,6 @@ public class UserInputMapper {
 
     public UserModel mapToModel(UserInputEntity userInputEntity) {
         return UserModel.builder()
-                .id(userInputEntity.getId())
                 .firstName(userInputEntity.getFirstName())
                 .lastName(userInputEntity.getLastName())
                 .dateOfBirth(userInputEntity.getDateOfBirth())

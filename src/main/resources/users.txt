@@ -1,0 +1,31 @@
+{
+    "id": 403,
+    "firstName": "sai",
+    "lastName": "Allu",
+    "dateOfBirth": "2001-02-22T18:30:00.000+00:00",
+    "email": "sai@example.com",
+    "phoneNumber": "8323244216",
+    "password": "sai@123",
+    "role": "ADMIN"
+}
+
+{
+    "firstName":"suresh",
+    "lastName": "lagudu",
+    "dateOfBirth":"1998-01-08T00:00:00.000+05:30",
+    "email":"suresh@example.com",
+    "phoneNumber":"9823244207",
+    "password": "sur@123",
+    "role":"USER"
+}
+
+
+{
+    "firstName":"pavan",
+    "lastName": "nandi",
+    "dateOfBirth":"2000-01-08T00:00:00.000+05:30",
+    "email":"pavan@example.com",
+    "phoneNumber":"7823284207",
+    "password": "pav@123",
+    "role":"USER"
+}

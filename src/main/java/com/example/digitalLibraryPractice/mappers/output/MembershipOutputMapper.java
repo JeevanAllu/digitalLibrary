@@ -23,19 +23,19 @@ public class MembershipOutputMapper {
                 .startDate(outputEntity.getStartDate())
                 .endDate(outputEntity.getEndDate())
                 .status(outputEntity.getStatus())
+                .plan(outputEntity.getPlan())
                 .build();
     }
-
-
 
     public MembershipOutputEntity mapFromModel(MembershipModel membershipModel){
         UserOutputEntity outputEntity = this.userOutputMapper.mapFromModel(membershipModel.getUser());
         return MembershipOutputEntity.builder()
-                .id(membershipModel.getId() == 0 ? null : membershipModel.getId())
+                .id(membershipModel.getId())
                 .user(outputEntity)
                 .startDate(membershipModel.getStartDate())
                 .endDate(membershipModel.getEndDate())
                 .status(membershipModel.getStatus())
+                .plan(membershipModel.getPlan())
                 .build();
     }
 

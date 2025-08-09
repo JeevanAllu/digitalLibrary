@@ -4,19 +4,19 @@ import com.example.digitalLibraryPractice.Exceptions.ResourceNotFoundException;
 import com.example.digitalLibraryPractice.entities.input.BookInputEntity;
 import com.example.digitalLibraryPractice.model.BookModel;
 import com.example.digitalLibraryPractice.model.UserModel;
-import com.example.digitalLibraryPractice.model.UserPrincipal;
+//import com.example.digitalLibraryPractice.model.UserPrincipal;
 import com.example.digitalLibraryPractice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+//import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.userdetails.UserDetailsService;
+//import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserService implements UserDetailsService {
+public class UserService {//implements UserDetailsService {
 
     private final UserRepository userRepository;
 
@@ -49,14 +49,14 @@ public class UserService implements UserDetailsService {
         return this.userRepository.getUserByEmail(email);
     }
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        try {
-            UserModel userModel = this.getUserByEmail(username);
-            return new UserPrincipal(userModel);
-        }
-        catch(ResourceNotFoundException e){
-            throw new UsernameNotFoundException(e.getMessage());
-        }
-    }
+//    @Override
+//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//        try {
+//            UserModel userModel = this.getUserByEmail(username);
+//            return new UserPrincipal(userModel);
+//        }
+//        catch(ResourceNotFoundException e){
+//            throw new UsernameNotFoundException(e.getMessage());
+//        }
+//    }
 }

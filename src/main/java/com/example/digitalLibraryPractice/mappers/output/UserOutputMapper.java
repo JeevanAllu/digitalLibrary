@@ -23,7 +23,7 @@ public class UserOutputMapper {
 
     public UserOutputEntity mapFromModel(UserModel userModel){
         return UserOutputEntity.builder()
-                .id(userModel.getId() == 0 ? null : userModel.getId())
+                .id(userModel.getId())
                 .firstName(userModel.getFirstName())
                 .lastName(userModel.getLastName())
                 .dateOfBirth(userModel.getDateOfBirth())
@@ -33,4 +33,22 @@ public class UserOutputMapper {
                 .phoneNumber(userModel.getPhoneNumber())
                 .build();
     }
+
+//    public UserOutputEntity mapFromModel(UserModel userModel) {
+//        UserOutputEntity.UserOutputEntityBuilder builder = UserOutputEntity.builder()
+//                .firstName(userModel.getFirstName())
+//                .lastName(userModel.getLastName())
+//                .dateOfBirth(userModel.getDateOfBirth())
+//                .password(userModel.getPassword())
+//                .role(userModel.getRole())
+//                .email(userModel.getEmail())
+//                .phoneNumber(userModel.getPhoneNumber());
+//
+//        // Only set ID if it’s not null (update case)
+//        if (userModel.getId() != null) {
+//            builder.id(userModel.getId());
+//        }
+//        return builder.build();
+//    }
+
 }
