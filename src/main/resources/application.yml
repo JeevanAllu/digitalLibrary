@@ -16,7 +16,21 @@ spring:
 #      host:
 #      port:
 #      password:
-#  security:
-#    user:
-#      name: "Jeevan"
-#      password: "Jeevan"
+  security:
+    user:
+      name: "Jeevan"
+      password: "Jeevan"
+
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Ov23licH9cUpNmWPmNu4
+            client-secret: 54d3e86daac015ed971554e3a60b1fa61b740251
+
+        provider:
+          github:
+            authorization-uri: https://github.com/login/oauth/authorize
+            token-uri: https://github.com/login/oauth/access_token
+            user-info-uri: https://api.github.com/user
+            user-name-attribute: id

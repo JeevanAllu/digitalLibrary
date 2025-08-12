@@ -19,7 +19,7 @@ public class UserOutputEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(nullable = false)
-    private Long id;
+    private long id;
 
     @Column(name = "first_name",nullable = false)
     private String firstName;

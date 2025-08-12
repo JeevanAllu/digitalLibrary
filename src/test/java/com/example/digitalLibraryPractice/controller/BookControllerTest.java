@@ -1,4 +1,4 @@
-package com.example.digitalLibraryPractice;
+package com.example.digitalLibraryPractice.controller;
 
 import com.example.digitalLibraryPractice.Exceptions.ResourceNotFoundException;
 import com.example.digitalLibraryPractice.commons.CommonAdapter;

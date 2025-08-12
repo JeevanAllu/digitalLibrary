@@ -15,7 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class UserModel {
 
-    private Long id;
+    private long id;
     private String firstName;
     private String lastName;
     private Date dateOfBirth;

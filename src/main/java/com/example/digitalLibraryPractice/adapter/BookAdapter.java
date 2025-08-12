@@ -2,8 +2,10 @@ package com.example.digitalLibraryPractice.adapter;
 
 import com.example.digitalLibraryPractice.commons.CommonAdapter;
 import com.example.digitalLibraryPractice.entities.input.BookInputEntity;
+import com.example.digitalLibraryPractice.entities.input.UserInputEntity;
 import com.example.digitalLibraryPractice.mappers.input.BookInputMapper;
 import com.example.digitalLibraryPractice.model.BookModel;
+import com.example.digitalLibraryPractice.model.UserModel;
 import com.example.digitalLibraryPractice.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -36,6 +38,11 @@ public class BookAdapter implements CommonAdapter<BookInputEntity,BookModel> {
     @Override
     public BookModel findById(long id){
         return this.bookService.findById(id);
+    }
+
+    @Override
+    public UserModel updateById(long id, UserInputEntity userInputEntity) {
+        return null;
     }
 
     @Override

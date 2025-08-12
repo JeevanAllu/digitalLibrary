@@ -1,10 +1,7 @@
 package com.example.digitalLibraryPractice.adapter;
 
 import com.example.digitalLibraryPractice.commons.CommonAdapter;
-import com.example.digitalLibraryPractice.entities.input.BookInputEntity;
 import com.example.digitalLibraryPractice.entities.input.UserInputEntity;
-import com.example.digitalLibraryPractice.entities.output.UserOutputEntity;
-import com.example.digitalLibraryPractice.mappers.input.BookInputMapper;
 import com.example.digitalLibraryPractice.mappers.input.UserInputMapper;
 import com.example.digitalLibraryPractice.model.UserModel;
 import com.example.digitalLibraryPractice.services.UserService;
@@ -31,13 +28,20 @@ public class UserAdapter implements CommonAdapter<UserInputEntity,UserModel> {
     }
 
     @Override
+    public UserModel update(UserInputEntity userInputEntity) {
+        return null;
+    }
+
+    @Override
     public UserModel findById(long id){
         return this.userService.getUser(id);
     }
 
+
+
     @Override
-    public UserModel update(UserInputEntity userInputEntity){
-        return this.userService.updateUser(this.userInputMapper.mapToModel(userInputEntity));
+    public UserModel updateById(long id, UserInputEntity userInputEntity){
+        return this.userService.updateUser(id,this.userInputMapper.mapToModel(userInputEntity));
     }
 
     @Override

@@ -2,10 +2,12 @@ package com.example.digitalLibraryPractice.adapter;
 
 import com.example.digitalLibraryPractice.commons.CommonAdapter;
 import com.example.digitalLibraryPractice.entities.input.MembershipInputEntity;
+import com.example.digitalLibraryPractice.entities.input.UserInputEntity;
 import com.example.digitalLibraryPractice.enums.MembershipStatus;
 import com.example.digitalLibraryPractice.mappers.input.BookInputMapper;
 import com.example.digitalLibraryPractice.mappers.input.MembershipInputMapper;
 import com.example.digitalLibraryPractice.model.MembershipModel;
+import com.example.digitalLibraryPractice.model.UserModel;
 import com.example.digitalLibraryPractice.services.MembershipService;
 import com.example.digitalLibraryPractice.utils.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +44,11 @@ public class MembershipAdapter implements CommonAdapter<MembershipInputEntity,Me
     @Override
     public MembershipModel findById(long id) {
         return this.membershipService.getById(id);
+    }
+
+    @Override
+    public UserModel updateById(long id, UserInputEntity userInputEntity) {
+        return null;
     }
 
     public void deleteMemberByUserId(long id){

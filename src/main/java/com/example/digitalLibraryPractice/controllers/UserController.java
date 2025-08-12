@@ -35,9 +35,9 @@ public class UserController {
         return this.adapter.findById(id);
     }
 
-    @PutMapping("/updateUser")
-    public UserModel updateUser(@RequestBody UserInputEntity userInputEntity){
-        return this.adapter.update(userInputEntity);
+    @PutMapping("/updateUser/{id}")
+    public UserModel updateUser(@PathVariable long id ,@RequestBody UserInputEntity userInputEntity){
+        return this.adapter.updateById(id,userInputEntity);
     }
 
     @DeleteMapping("/deleteUser/{id}")
